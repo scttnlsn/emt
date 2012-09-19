@@ -1,6 +1,6 @@
 {
     "name": "emt",
-    "version": "0.0.0",
+    "version": "0.0.1",
     "description": "Express/Mongoose Toolkit",
     "homepage": "http://github.com/scttnlsn/emt",
     "author": "Scott Nelson <scott@scttnlsn.com>",
