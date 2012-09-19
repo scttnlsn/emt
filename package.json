@@ -1,0 +1,24 @@
+{
+    "name": "emt",
+    "version": "0.0.0",
+    "description": "Express/Mongoose Toolkit",
+    "homepage": "http://github.com/scttnlsn/emt",
+    "author": "Scott Nelson <scott@scttnlsn.com>",
+    "main": "./lib/index",
+
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/scttnlsn/emt.git"
+    },
+
+    "scripts": {
+        "test": "./node_modules/.bin/mocha"
+    },
+
+    "dependencies": {
+    },
+
+    "devDependencies": {
+        "mocha": ">= 1.4.2"
+    }
+}
