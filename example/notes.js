@@ -27,6 +27,14 @@ notes.get('/',
     }
 );
 
+var notfound = function(req, res, next) {
+    if (!req.instance) {
+        res.json({ error: 'Note not found' }, 404);
+    } else {
+        next();
+    }
+};
+
 notes.post('/',
     emt.crud.create(),
     emt.crud.save(),
@@ -35,11 +43,13 @@ notes.post('/',
 
 notes.get('/:id',
     emt.crud.load(),
+    notfound,
     emt.json.show()
 );
 
 notes.put('/:id',
     emt.crud.load(),
+    notfound,
     emt.crud.update(),
     emt.crud.save(),
     emt.json.show()
@@ -47,6 +57,7 @@ notes.put('/:id',
 
 notes.del('/:id',
     emt.crud.load(),
+    notfound,
     emt.crud.remove(),
     emt.json.show({ status: 204 })
 );
