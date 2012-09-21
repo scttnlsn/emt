@@ -106,6 +106,17 @@ describe('Query', function() {
                 done();
             });
         });
+
+        it('accepts max value', function(done) {
+            var limit = query.limit({ max: 100 });
+
+            req.query.limit = 123;
+
+            limit(req, null, function() {
+                assert.equal(stub.getCall(0).args[0], 100);
+                done();
+            });
+        });
     });
 
     describe('skip', function() {
